@@ -1,6 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export TERM=xterm-256color
+
 # Powerlevel9k config
 
 POWERLEVEL9K_MODE='nerdfont-complete'
@@ -130,4 +132,3 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 alias ssh-dev="ssh -A interndev2-uswest1adevc -t zsh"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export TERM=xterm-256color
