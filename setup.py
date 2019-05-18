@@ -2,6 +2,8 @@ import os
 
 home_path = os.getenv("HOME")
 run = os.system
+# create soft link for dot files
+
 # install vim8.1 with python3 support.
 """
 run('brew install vim')
@@ -22,4 +24,7 @@ theme_git_clone_cmd = "git clone %s %s/powerlevel10k" % (theme_git_url,
 run(theme_git_clone_cmd)
 """
 # install tmux
+"""
 run("brew install tmux")
+"""
+
