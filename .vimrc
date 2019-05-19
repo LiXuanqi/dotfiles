@@ -1,10 +1,11 @@
 set nocompatible
 syntax on
 set number
+set relativenumber
+set nowrap
 set encoding=utf-8
 set fileencoding=utf-8
 set clipboard=unnamed
-set nowrap
 " Split window
 set splitbelow
 set splitright
@@ -17,26 +18,18 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-Plug 'vim-syntastic/syntastic' " Syntax check
+" Plug 'vim-syntastic/syntastic' " Syntax check
+Plug 'w0rp/ale' " Syntax check
+Plug 'morhetz/gruvbox' " Theme
 Plug 'scrooloose/nerdtree' " File tree
+Plug 'vim-airline/vim-airline'
 " Plug 'python-mode/python-mode', { 'branch': 'develop' }
 Plug 'kien/ctrlp.vim' " File search
 call plug#end()
 
-" Syntastic - general
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" Theme - gruvbox
+colorscheme gruvbox
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-" Syntastic - python in yelp
-let g:syntastic_python_checkers = ['pep8']
-let g:syntastic_python_pep8_args='--ignore=E501'
-let g:pymode_python = 'python3'
 
 " Python
 au BufNewFile,BufRead *.py
