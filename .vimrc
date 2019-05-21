@@ -3,8 +3,8 @@ syntax on
 set number
 set relativenumber
 set nowrap
-set encoding=utf-8
-set fileencoding=utf-8
+" set encoding=utf-8
+" set fileencoding=utf-8
 set clipboard=unnamed
 set autoread
 
@@ -27,17 +27,23 @@ endif
 
 call plug#begin('~/.vim/plugged')
 " Plug 'vim-syntastic/syntastic' " Syntax check
+Plug 'tpope/vim-sensible'
 Plug 'w0rp/ale' " Syntax check
 Plug 'morhetz/gruvbox' " Theme
-Plug 'scrooloose/nerdtree' " File tree
 Plug 'vim-airline/vim-airline'
 " Plug 'python-mode/python-mode', { 'branch': 'develop' }
 Plug 'kien/ctrlp.vim' " File search
+Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 " Theme - gruvbox
 colorscheme gruvbox
 
+" vim-airlne
+let g:airline_theme='gruvbox'
 
 " Python
 au BufNewFile,BufRead *.py
@@ -54,8 +60,6 @@ au BufNewFile,BufRead *.html, *.css, *.js
 			\ set tabstop=2 |
 			\ set softtabstop=2 |
 			\ set shiftwidth=2 
-" NERDTree
-let NERDTreeIgnore=['\.pyc$', '\~$']
 
 " ale
 let g:ale_fix_on_save=1
