@@ -6,6 +6,14 @@ set nowrap
 set encoding=utf-8
 set fileencoding=utf-8
 set clipboard=unnamed
+set autoread
+
+" indent
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+
 " Split window
 set splitbelow
 set splitright
@@ -48,3 +56,9 @@ au BufNewFile,BufRead *.html, *.css, *.js
 			\ set shiftwidth=2 
 " NERDTree
 let NERDTreeIgnore=['\.pyc$', '\~$']
+
+" ale
+let g:ale_fix_on_save=1
+let g:ale_fixers={
+            \ 'python': ['autopep8']
+            \ }
