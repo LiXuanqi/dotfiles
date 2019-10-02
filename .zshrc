@@ -140,4 +140,3 @@ alias ssh-dev="ssh -A interndev2-uswest1adevc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source ~/.pycharm_git_workflow_bash
