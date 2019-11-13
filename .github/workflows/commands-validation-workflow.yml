@@ -1,0 +1,10 @@
+name: Commands Test
+on: [push]
+
+jobs:
+    macOS:
+        name: Run macOS
+        runs-on: macos-latest
+        steps:
+            - name: Echo hello world
+              run: echo 'hello world.'
