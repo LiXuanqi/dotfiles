@@ -8,3 +8,7 @@ jobs:
         steps:
             - name: Echo hello world
               run: echo 'hello world.'
+    Ubuntu:
+        name: Run Ubuntu
+        runs-on: ubuntu-latest
+        steps:
