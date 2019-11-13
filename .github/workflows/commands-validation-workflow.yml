@@ -7,8 +7,10 @@ jobs:
         runs-on: macos-latest
         steps:
             - name: Echo hello world
-              run: echo 'hello world.'
+              run: echo 'hello world from macOS.'
     Ubuntu:
         name: Run Ubuntu
         runs-on: ubuntu-latest
         steps:
+            - name: Echo hello world
+              run: echo 'hello world from ubuntu.'
