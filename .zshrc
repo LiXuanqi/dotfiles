@@ -140,3 +140,4 @@ alias ssh-dev="ssh -A interndev2-uswest1adevc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH=$(brew --prefix)/smlnj/bin:"$PATH"
