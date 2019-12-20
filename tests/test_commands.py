@@ -7,4 +7,5 @@ def is_program_exist(program_name):
 
 def test_commands():
     assert is_program_exist('ls')
+    assert is_program_exist('brew')
     
