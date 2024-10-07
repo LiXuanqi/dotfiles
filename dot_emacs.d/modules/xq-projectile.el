@@ -11,11 +11,16 @@
 
   (setq projectile-switch-project-action #'projectile-find-file))
 
+;; (use-package counsel-projectile
+;;   :init
+;;   (counsel-projectile-mode))
+
 (defun xq/find-file-in-emacs-config ()
   "Find file in ~/.emacs.d using projectile."
   (interactive)
   (let ((projectile-project-root "~/.emacs.d"))
     (projectile-find-file)))
 (global-set-key (kbd "C-c e") 'find-file-in-emacs-config)
+
 
 (provide 'xq-projectile)

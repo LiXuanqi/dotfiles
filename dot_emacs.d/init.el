@@ -44,6 +44,10 @@
 (require 'xq-company)
 (require 'xq-astro)
 
+;; (use-package exec-path-from-shell
+;;   :config
+;;   (exec-path-from-shell-initialize))
+
 (use-package which-key
   :init (which-key-mode)
   :diminish which-key-mode
@@ -112,7 +116,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(visual-fill-column org-bullets rust-mode company-box company projectile doom-modeline doom-themes helpful ivy-rich lsp-mode evil-collection evil general which-key counsel swiper command-log-mode)))
+   '(counsel-projectile ripgrep rg visual-fill-column org-bullets rust-mode company-box company projectile doom-modeline doom-themes helpful ivy-rich lsp-mode evil-collection evil general which-key counsel swiper command-log-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
