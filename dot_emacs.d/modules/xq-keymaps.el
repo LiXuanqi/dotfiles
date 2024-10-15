@@ -9,7 +9,7 @@
     "t"  '(:ignore t :which-key "toggles")
     "tt" '(counsel-load-theme :which-key "choose theme")
     "s" '(:ignore t :which-key "search")
-    "sf" '(counsel-find-file :which-key "find file")
+    "sf" '(projectile-find-file :which-key "find file")
     "sb" '(counsel-switch-buffer :which-key "find buffer")
     "sp" '(projectile-switch-project :which-key "switch project")
     "sn" '(xq/find-file-in-emacs-config  :which-key "find in emacs configs")

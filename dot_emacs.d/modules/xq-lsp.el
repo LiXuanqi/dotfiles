@@ -1,3 +1,4 @@
+;;; xq-lsp.el -*- lexical-binding: t -*-
 (defun efs/lsp-mode-setup ()
   (setq lsp-headerline-breadcrumb-segments '(path-up-to-project file symbols))
   (lsp-headerline-breadcrumb-mode))
@@ -26,8 +27,8 @@
   :after lsp)
 
 (use-package rust-mode
- :init
- (setq rust-mode-treesitter-derive t)
+  :init
+  (setq rust-mode-treesitter-derive t)
   )
 
 ;; (add-hook 'rust-mode-hook 'lsp-deferred)
@@ -42,6 +43,19 @@
 ;;   (setq treesit-auto-install 'prompt)
 ;;   (global-treesit-auto-mode))
 
+;; (use-package yaml-mode
+;;   :mode "\\.ya?ml\\'")
+
+(add-to-list 'auto-mode-alist '("\\.json\\'" . json-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.ya?ml\\'" . yaml-ts-mode))
+
+;; astro format
+;; (add-to-list
+;;  'apheleia-formatters
+;;  '(prettier-astro npx "prettier" "--stdin-filepath" filepath "--parser=astro"
+;;                   (apheleia-formatters-indent "--use-tabs" "--tab-width" 'astro-ts-mode-indent-offset)))
+
+;; (add-to-list 'apheleia-mode-alist '(astro-mode . prettier-astro))
 
 
 (provide 'xq-lsp)

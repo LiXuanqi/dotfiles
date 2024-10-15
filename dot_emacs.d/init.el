@@ -1,7 +1,12 @@
+;;; init.el -*- lexical-binding: t -*-
+
 (add-to-list 'load-path '"~/.emacs.d/modules")
 
 (add-to-list 'default-frame-alist '(height . 80))
 (add-to-list 'default-frame-alist '(width . 160)) 
+
+;; space instead of tab
+(setq-default indent-tabs-mode nil)
 
 ;; Store backup files in a specific directory
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
@@ -11,8 +16,10 @@
 (setq auto-save-file-name-transforms
       `((".*" ,(concat user-emacs-directory "auto-save/") t)))
 
-(setq custom-file (locate-user-emacs-file "custom-vars.el"))
-(load custom-file 'noerror 'nomessage)
+(setq custom-file (locate-user-emacs-file "custom-vars.el")) (load custom-file 'noerror 'nomessage)
+
+;; Auto apply file change to buffer
+(global-auto-revert-mode 1)
 
 
 (setq inhibit-startup-message t)
@@ -121,24 +128,29 @@
 (setq treesit-language-source-alist
       '((bash "https://github.com/tree-sitter/tree-sitter-bash")
 	(rust "https://github.com/tree-sitter/tree-sitter-rust")
-     (cmake "https://github.com/uyha/tree-sitter-cmake")
-     (elisp "https://github.com/Wilfred/tree-sitter-elisp")
-     (go "https://github.com/tree-sitter/tree-sitter-go")
-     (html "https://github.com/tree-sitter/tree-sitter-html")
-     (javascript "https://github.com/tree-sitter/tree-sitter-javascript" "master" "src")
-     (json "https://github.com/tree-sitter/tree-sitter-json")
-     (make "https://github.com/alemuller/tree-sitter-make")
-     (markdown "https://github.com/ikatyang/tree-sitter-markdown")
-     (python "https://github.com/tree-sitter/tree-sitter-python")
-     (toml "https://github.com/tree-sitter/tree-sitter-toml")
-    (css "https://github.com/tree-sitter/tree-sitter-css")
-     (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
-     (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
-     (yaml "https://github.com/ikatyang/tree-sitter-yaml")
-     (astro "https://github.com/virchau13/tree-sitter-astro")))
+	(cmake "https://github.com/uyha/tree-sitter-cmake")
+	(elisp "https://github.com/Wilfred/tree-sitter-elisp")
+	(go "https://github.com/tree-sitter/tree-sitter-go")
+	(html "https://github.com/tree-sitter/tree-sitter-html")
+	(javascript "https://github.com/tree-sitter/tree-sitter-javascript" "master" "src")
+	(json "https://github.com/tree-sitter/tree-sitter-json")
+	(make "https://github.com/alemuller/tree-sitter-make")
+	(markdown "https://github.com/ikatyang/tree-sitter-markdown")
+	(python "https://github.com/tree-sitter/tree-sitter-python")
+	(toml "https://github.com/tree-sitter/tree-sitter-toml")
+	(css "https://github.com/tree-sitter/tree-sitter-css")
+	(tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
+	(typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
+	(yaml "https://github.com/ikatyang/tree-sitter-yaml")
+	(astro "https://github.com/virchau13/tree-sitter-astro")))
 
 
-;; formatter - apheleia
+;; code format
+;; (use-package apheleia
+;;   :hook (prog-mode . apheleia-mode))
+(use-package apheleia
+  :config
+  (apheleia-global-mode))
 
 (defun efs/org-mode-setup ()
   (org-indent-mode)
@@ -195,3 +207,8 @@
 
 
 ;; yasnippet
+
+
+;; (use-package lispy
+;;   :hook ((emacs-lisp-mode . (lambda () (lispy-mode 1))))
+;;   )
